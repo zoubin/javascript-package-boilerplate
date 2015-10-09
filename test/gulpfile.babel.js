@@ -5,7 +5,7 @@ import del from 'del'
 import path from 'path'
 import gutil from 'gulp-util'
 
-var fixture = path.resolve.bind(path, 'tmp')
+var fixture = path.resolve.bind(path, 'build')
 var es5 = sequence(
   () => {
     return del(fixture('es5'))
