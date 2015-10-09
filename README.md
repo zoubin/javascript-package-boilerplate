@@ -76,4 +76,5 @@ npm publish
 ## Related
 
 * [my-badges](https://github.com/zoubin/my-badges)
+* [changelog generator](https://github.com/th507/changen)
 
