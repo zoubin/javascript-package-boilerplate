@@ -46,6 +46,37 @@ npm publish
 
 ```
 
+## Command line
+
+`js-pb -h`:
+
+```
+
+js-pb [-htfp] [project_directory]
+
+  Create files and directories for developing packages in es5 or es6.
+  Build: gulp
+  Lint: eslint.
+  Test: tape
+  Coverage: istanbul
+  ES6: babel
+
+  -h, --help
+    show this help text
+
+  -t, --template
+    followed by a directory path, which contains sources for a template.
+    Builtins: es5, es6. `es5` is the default template
+
+  -f, --force
+    overwrite existing files
+
+  -p, --peek
+    display the structure of the active template directory
+
+
+```
+
 ## All in one
 
 ### Gulp

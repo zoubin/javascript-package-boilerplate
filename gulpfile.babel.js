@@ -19,7 +19,7 @@ gulp.task('template', ['clean'], () => {
 })
 
 gulp.task('docs', ['clean'], () => {
-  return gulp.src(['README.md', 'LICENSE', 'package.json'])
+  return gulp.src(['README.md', 'LICENSE', 'package.json', 'bin/help.txt'], { base: process.cwd() })
     .pipe(gulp.dest('build'))
 })
 

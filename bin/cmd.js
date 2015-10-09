@@ -8,12 +8,13 @@ import { run } from 'callback-sequence'
 import tree from 'tree-directory'
 
 var argv = minimist(process.argv.slice(2), {
-  boolean: ['peek', 'force'],
+  boolean: ['peek', 'force', 'help'],
   string: ['template'],
   alias: {
     t: 'template',
     p: 'peek',
     f: 'force',
+    h: 'help',
   },
   'default': {
     t: 'es5',
@@ -28,6 +29,13 @@ if (argv.template.indexOf(path.sep) === -1 && argv.template[0] !== '.') {
 }
 
 ;(function NEXT() {
+  if (argv.help) {
+    return fs.createReadStream(path.join(__dirname, 'help.txt'))
+      .pipe(process.stdout)
+      .on('close', () => {
+        process.exit(1)
+      })
+  }
   let tplPath = paths.shift()
   if (!tplPath) {
     return console.log('No templates found')
@@ -55,7 +63,7 @@ if (argv.template.indexOf(path.sep) === -1 && argv.template[0] !== '.') {
         'Refer to',
         //'\033[4;32m',
         '\u001B[4;32m',
-        'https://github.com/zoubin/es6-pkg',
+        'https://github.com/zoubin/javascript-package-boilerplate',
         //'\033[0m',
         '\u001B[0m',
         'for more information'
