@@ -8,13 +8,14 @@ import { run } from 'callback-sequence'
 import tree from 'tree-directory'
 
 var argv = minimist(process.argv.slice(2), {
-  boolean: ['peek', 'force', 'help'],
+  boolean: ['peek', 'force', 'help', 'version'],
   string: ['template'],
   alias: {
     t: 'template',
     p: 'peek',
     f: 'force',
     h: 'help',
+    v: 'version',
   },
   'default': {
     t: 'es5',
@@ -29,6 +30,12 @@ if (argv.template.indexOf(path.sep) === -1 && argv.template[0] !== '.') {
 }
 
 ;(function NEXT() {
+  if (argv.version) {
+    console.log(
+      require('../package.json').version
+    )
+    return
+  }
   if (argv.help) {
     return fs.createReadStream(path.join(__dirname, 'help.txt'))
       .pipe(process.stdout)

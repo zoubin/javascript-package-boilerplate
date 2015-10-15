@@ -52,7 +52,7 @@ npm publish
 
 ```
 
-js-pb [-htfp] [project_directory]
+js-pb [-htfpv] [project_directory]
 
   Create files and directories for developing packages in es5 or es6.
   Build: gulp
@@ -73,6 +73,9 @@ js-pb [-htfp] [project_directory]
 
   -p, --peek
     display the structure of the active template directory
+
+  -v, --version
+    show the version
 
 
 ```

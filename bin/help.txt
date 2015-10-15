@@ -21,3 +21,6 @@ js-pb [-htfp] [project_directory]
   -p, --peek
     display the structure of the active template directory
 
+  -v, --version
+    show the version
+
