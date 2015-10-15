@@ -107,6 +107,22 @@ js-pb [-htfpv] [project_directory]
 * [ecma-262 6th edition](http://www.ecma-international.org/ecma-262/6.0/)
 * [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
+### Difference between es6 and babelified code
+
+#### export default
+In [es6features](https://github.com/lukehoban/es6features#modules), you can do:
+```javascript
+export * from "lib/math";
+export var e = 2.71828182846;
+export default function(x) {
+  return Math.log(x);
+}
+```
+
+But, when using babel, **do NOT** export other things when you have export default.
+The code babelified from the above one won't work.
+Acutually, the export default will fail.
+
 ## Related
 
 * [my-badges](https://github.com/zoubin/my-badges)
