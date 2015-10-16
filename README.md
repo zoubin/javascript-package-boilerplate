@@ -102,6 +102,13 @@ js-pb [-htfpv] [project_directory]
 
 ### es6
 
+There are some problems when developing es6 with babel.
+
+#### export default
+If you use export default, do not export any other things
+
+#### References
+
 * [babel](https://babeljs.io/)
 * [lukehoban#es6features](https://github.com/lukehoban/es6features)
 * [ecma-262 6th edition](http://www.ecma-international.org/ecma-262/6.0/)

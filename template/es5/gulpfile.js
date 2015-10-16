@@ -30,6 +30,16 @@ gulp.task('coverage',
   require('callback-sequence')(instrument, test, report)
 )
 gulp.task('default', ['lint', 'coverage'])
+gulp.task('upload-coverage', ['coverage'], function (cb) {
+  var handleReport = require('coveralls/lib/handleInput')
+  var fs = require('fs')
+  fs.readFile('./coverage/lcov.info', 'utf8', function (err, data) {
+    if (err) {
+      return cb(err)
+    }
+    handleReport(data, cb)
+  })
+})
 
 function instrument() {
   var istanbul = require('gulp-istanbul')

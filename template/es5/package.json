@@ -5,6 +5,7 @@
   },
   "devDependencies": {
     "callback-sequence": "^1.2.1",
+    "coveralls": "^2.11.4",
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.0.0",
