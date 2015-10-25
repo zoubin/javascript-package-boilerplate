@@ -47,6 +47,6 @@
     "isparta": "^3.0.4",
     "tap-spec": "^4.1.0",
     "tape": "^4.2.0",
-    "task-tape": "0.0.2"
+    "task-tape": "^1.0.0"
   }
 }
