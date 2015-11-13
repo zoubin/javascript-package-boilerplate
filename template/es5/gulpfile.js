@@ -6,7 +6,7 @@ gulp.task('clean', function () {
 })
 
 gulp.task('scripts', ['clean'], function () {
-  return gulp.src(['lib/*.js', 'bin/*.js', 'index.js'], { base: process.cwd() })
+  return gulp.src(['lib/**/*', 'bin/**/*', 'index.js'], { base: process.cwd() })
     .pipe(gulp.dest('build'))
 })
 
@@ -19,7 +19,7 @@ gulp.task('build', ['scripts', 'docs'])
 
 gulp.task('lint', function () {
   var eslint = require('gulp-eslint')
-  return gulp.src(['*.js', 'bin/*.js', 'lib/*.js', 'test/*.js'])
+  return gulp.src(['*.js', 'bin/*.js', 'lib/**/*.js', 'test/*.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
@@ -43,7 +43,7 @@ gulp.task('upload-coverage', ['coverage'], function (cb) {
 
 function instrument() {
   var istanbul = require('gulp-istanbul')
-  return gulp.src(['lib/*.js', 'index.js'])
+  return gulp.src(['lib/**/*.js', 'index.js'])
     .pipe(istanbul({ includeUntested: true }))
     .pipe(istanbul.hookRequire())
 }

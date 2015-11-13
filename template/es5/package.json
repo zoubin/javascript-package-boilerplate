@@ -1,5 +1,5 @@
 {
-  "main": "lib/main",
+  "main": "index.js",
   "scripts": {
     "test": "gulp"
   },
@@ -10,7 +10,7 @@
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.0.0",
     "gulp-istanbul": "^0.10.1",
-    "gulp-tape": "0.0.4",
+    "gulp-tape": "0.0.5",
     "tap-spec": "^4.1.0",
     "tape": "^4.2.0",
     "task-tape": "^1.0.0"

@@ -7,7 +7,7 @@ gulp.task('clean', () => {
 
 gulp.task('scripts', ['clean'], () => {
   let babel = require('gulp-babel')
-  return gulp.src(['lib/*.js', 'bin/*.js'], { base: process.cwd() })
+  return gulp.src(['lib/**/*', 'bin/**/*'], { base: process.cwd() })
     .pipe(babel())
     .pipe(gulp.dest('build'))
 })
@@ -31,7 +31,7 @@ gulp.task('build', ['scripts', 'package', 'docs'])
 
 gulp.task('lint', () => {
   let eslint = require('gulp-eslint')
-  return gulp.src(['*.js', 'bin/*.js', 'lib/*.js', 'test/*.js'])
+  return gulp.src(['*.js', 'bin/**/*.js', 'lib/**/*.js', 'test/*.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
@@ -56,7 +56,7 @@ gulp.task('upload-coverage', ['coverage'], (cb) => {
 function instrument() {
   let istanbul = require('gulp-istanbul')
   let isparta = require('isparta')
-  return gulp.src('lib/*.js')
+  return gulp.src('lib/**/*.js')
     .pipe(istanbul({
       includeUntested: true,
       instrumenter: isparta.Instrumenter,
