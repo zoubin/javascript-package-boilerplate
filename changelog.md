@@ -1,4 +1,17 @@
-<!-- LATEST d5117d1 -->
+<!-- LATEST ba2f655 -->
+
+## [v1.0.3](https://github.com/zoubin/javascript-package-boilerplate/commit/ba2f655) (2015-11-15)
+
+* [ 2015-11-15 [742354d](https://github.com/zoubin/javascript-package-boilerplate/commit/742354d) ] Refactor templates.
+    
+    * Add [ezchangelog](https://github.com/zoubin/ezchangelog) to readme.
+    * Use 'coverage' in gitignore rather than '/coverage'.
+    * Use code from [math-hacker](https://github.com/zoubin/math-hacker) as
+      examples.
+
+* [ 2015-11-13 [31afe75](https://github.com/zoubin/javascript-package-boilerplate/commit/31afe75) ] travis: 5
+
+* [ 2015-11-13 [d5fd52f](https://github.com/zoubin/javascript-package-boilerplate/commit/d5fd52f) ] CHANGELOG
 
 ## [v1.0.2](https://github.com/zoubin/javascript-package-boilerplate/commit/d5117d1) (2015-11-13)
 
