@@ -1,5 +1,5 @@
 # javascript-package-boilerplate
-Boilerplate for developing javascript packages
+Boilerplate for developing javascript packages.
 
 [![npm](https://nodei.co/npm/js-pb.png?downloads=true)](https://www.npmjs.org/package/js-pb)
 
@@ -133,6 +133,7 @@ Acutually, the export default will fail.
 ## Related
 
 * [my-badges](https://github.com/zoubin/my-badges)
-* [changelog generator](https://github.com/th507/changen)
-* [when 2 spaces or 4 spaces matter](https://github.com/zoubin/vim-tabstop)
+* [ezchangelog](https://github.com/zoubin/ezchangelog)
+* [changen](https://github.com/th507/changen)
+* [2 spaces or 4 spaces](https://github.com/zoubin/vim-tabstop)
 

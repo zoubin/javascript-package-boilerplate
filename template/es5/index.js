@@ -1,3 +1,4 @@
+// This is copied from [math-hacker](https://github.com/zoubin/math-hacker/blob/master/index.js)
 
 // bugfix: (2.385).toFixed(2) === '2.38'
 exports.toFixed = toFixed
@@ -9,7 +10,15 @@ function toFixed(num, digits) {
   var str = num + 'e' + digits
   num = Math.round(str)
   str = num + 'e' + -digits
-  return '' + +str
+  num = +str + ''
+  var p = precision(num)
+  if (p === 0) {
+    num += '.'
+  }
+  while (p++ < digits) {
+    num += '0'
+  }
+  return num
 }
 
 // bugfix: 0.34 + 0.01 === 0.35000000000000003
@@ -34,4 +43,3 @@ function precision(num) {
   var str = '' + num
   return str.length - 1 - str.indexOf('.')
 }
-
