@@ -19,20 +19,7 @@ npm install
 
 ```
 
-`js-pb -h`:
-
-```
-
-  Usage: js-pb [options] [directory]
-
-  Options:
-
-    -h, --help                  output usage information
-    -V, --version               output the version number
-    -t, --template <directory>  `es5` | `es6`. Default: `es5`.
-    -f, --force                 overwrite existing files
-
-```
+Execute `js-pb -h` for more information.
 
 ## Develope ES5
 Develope a package written in ES5.

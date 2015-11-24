@@ -8,7 +8,7 @@ var program = new Command('js-pb')
 program
   .version(require('../package.json').version)
   .usage('[options] [directory]')
-  .option('-t, --template <directory>', '`es5` | `es6`. Default: `es5`.', 'es5')
+  .option('-t, --template <directory>', '`es5` | `es6` | `es6-babel6`. Default: `es5`.', 'es5')
   .option('-f, --force', 'overwrite existing files')
   .parse(process.argv)
 
