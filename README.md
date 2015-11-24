@@ -1,8 +1,6 @@
 # javascript-package-boilerplate
 Boilerplate for developing javascript packages.
 
-[![npm](https://nodei.co/npm/js-pb.png?downloads=true)](https://www.npmjs.org/package/js-pb)
-
 [![version](https://img.shields.io/npm/v/js-pb.svg)](https://www.npmjs.org/package/js-pb)
 [![status](https://travis-ci.org/zoubin/javascript-package-boilerplate.svg?branch=master)](https://travis-ci.org/zoubin/javascript-package-boilerplate)
 [![dependencies](https://david-dm.org/zoubin/javascript-package-boilerplate.svg)](https://david-dm.org/zoubin/javascript-package-boilerplate)
@@ -14,121 +12,150 @@ Boilerplate for developing javascript packages.
 npm i -g js-pb
 
 mkdir your_project
-
 cd your_project
-
-# create `package.json`
 npm init
-
-# create files
-# for developing es5
 js-pb
-# for developing es6
-js-pb -t es6
-
 npm install
 
-# test the sample code
-gulp
-
-# coding
-
-# check coverage
-npm test
-
-# commit your code and bump version
-
-gulp build
-
-cd build
-
-npm publish
-
 ```
-
-## Command line
 
 `js-pb -h`:
 
 ```
 
-js-pb [-htfpv] [project_directory]
+  Usage: js-pb [options] [directory]
 
-  Create files and directories for developing packages in es5 or es6.
-  Build: gulp
-  Lint: eslint.
-  Test: tape
-  Coverage: istanbul
-  ES6: babel
+  Options:
 
-  -h, --help
-    show this help text
-
-  -t, --template
-    followed by a directory path, which contains sources for a template.
-    Builtins: es5, es6. `es5` is the default template
-
-  -f, --force
-    overwrite existing files
-
-  -p, --peek
-    display the structure of the active template directory
-
-  -v, --version
-    show the version
-
+    -h, --help                  output usage information
+    -V, --version               output the version number
+    -t, --template <directory>  `es5` | `es6`. Default: `es5`.
+    -f, --force                 overwrite existing files
 
 ```
 
-## All in one
+## Develope ES5
+Develope a package written in ES5.
 
-### Gulp
+`package.json`:
 
-* [gulp](https://github.com/gulpjs/gulp)
+```json
+{
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && task-tape test/*.js | tap-summary",
+    "lint": "eslint *.js lib/**/*.js test/*.js bin/*.js",
+    "coverage": "istanbul cover -i 'lib/**/*.js' -i '*.js' --print both task-tape -- test/*.js",
+    "check-coverage": "istanbul check-coverage --statements 90 --functions 90 --branches 85 --lines 90",
+    "upload-coverage": "cat ./coverage/lcov.info | coveralls",
+    "cover": "npm run coverage && npm run check-coverage && npm run upload-coverage"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "eslint": "^1.10.1",
+    "istanbul": "^0.4.0",
+    "tap-summary": "^1.0.0",
+    "tape": "^4.2.0",
+    "task-tape": "^1.0.0"
+  }
+}
 
-### Lint
+```
 
-* [eslint](https://github.com/eslint/eslint)
+### Run tests
 
-### Test
+Command: `npm test`
 
-* [tape](https://github.com/substack/tape)
-* [task-tape](https://github.com/zoubin/task-tape)
+Run tests with [`task-tape`].
 
-### Coverage
+### Code lint
 
-* [istanbul](https://github.com/SBoudrias/gulp-istanbul)
-* [isparta](https://github.com/douglasduteil/isparta).
+Command: `npm run lint`
 
-### es6
+Apply [`eslint`].
 
-There are some problems when developing es6 with babel.
+### Code coverage
 
-#### export default
-If you use export default, do not export any other things
+Command: `npm run coverage`
 
-#### References
+Computes code coverage using [`istanbul`].
 
-* [babel](https://babeljs.io/)
+Command: `npm run check-coverage`
+
+Check if code coverage thresholds satisfied.
+
+Command: `npm run upload-coverage`
+
+Upload code coverage data to [coveralls.io](https://coveralls.io/).
+Visit the site for more information.
+
+## Develope ES6
+
+Use [`babel`] and [`gulp`] to develope a package in ES6 code,
+and publish the compiled ES5 code.
+
+ES6 References:
+
 * [lukehoban#es6features](https://github.com/lukehoban/es6features)
 * [ecma-262 6th edition](http://www.ecma-international.org/ecma-262/6.0/)
 * [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-### Difference between es6 and babelified code
+```bash
+gulp lint
+gulp test
+gulp coverage
+gulp upload-coverage
+gulp build
 
-#### export default
-In [es6features](https://github.com/lukehoban/es6features#modules), you can do:
-```javascript
-export * from "lib/math";
-export var e = 2.71828182846;
-export default function(x) {
-  return Math.log(x);
-}
 ```
 
-But, when using babel, **do NOT** export other things when you have export default.
-The code babelified from the above one won't work.
-Acutually, the export default will fail.
+### Babel 5 runtime options
+
+Modify `gulpfile.bable.js`:
+
+```javascript
+gulp.task('scripts', ['clean'], () => {
+  let babel = require('gulp-babel')
+  return gulp.src(['lib/**/*', 'bin/**/*'], { base: process.cwd() })
+    .pipe(babel({ optional: ['runtime'] }))
+    .pipe(gulp.dest('build'))
+})
+
+```
+
+### Babel 6 runtime options
+
+Install:
+
+```bash
+npm i --save-dev babel-plugin-transform-runtime
+
+```
+
+Modify `.babelrc`:
+
+```json
+{
+  "presets": ["es2015"],
+  "plugins": ["transform-runtime"]
+}
+
+```
+
+Modify `gulpfile.bable.js`:
+
+```javascript
+gulp.task('scripts', ['clean'], () => {
+  let babel = require('gulp-babel')
+  return gulp.src(['lib/**/*', 'bin/**/*'], { base: process.cwd() })
+    .pipe(babel({
+      presets: ['es2015'],
+      plugins: ['transform-runtime'],
+    }))
+    .pipe(gulp.dest('build'))
+})
+
+```
 
 ## Related
 
@@ -136,4 +163,15 @@ Acutually, the export default will fail.
 * [ezchangelog](https://github.com/zoubin/ezchangelog)
 * [changen](https://github.com/th507/changen)
 * [2 spaces or 4 spaces](https://github.com/zoubin/vim-tabstop)
+
+
+[`tape`]: https://github.com/substack/tape
+[`task-tape`]: https://github.com/zoubin/task-tape
+[`tap-summary`]: https://github.com/zoubin/tap-summary
+[`eslint`]: https://github.com/eslint/eslint
+[`babel-eslint`]: https://github.com/babel/babel-eslint
+[`istanbul`]: https://github.com/SBoudrias/gulp-istanbul
+[`isparta`]: https://github.com/douglasduteil/isparta
+[`gulp`]: https://github.com/gulpjs/gulp
+[`babel`]: https://babeljs.io/
 

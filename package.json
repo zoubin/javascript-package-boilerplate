@@ -4,7 +4,8 @@
   "description": "Boilerplate for developing javascript packages",
   "main": "index.js",
   "scripts": {
-    "test": "gulp"
+    "test": "npm run lint && task-tape test/*.js | tap-summary",
+    "lint": "eslint lib/*.js test/*.js bin/*.js"
   },
   "bin": {
     "js-pb": "./bin/cmd.js"
@@ -27,25 +28,20 @@
   },
   "homepage": "https://github.com/zoubin/javascript-package-boilerplate#readme",
   "dependencies": {
-    "callback-sequence": "^1.2.1",
+    "ansi-escape": "^1.0.1",
+    "commander": "^2.9.0",
     "gulp-json-editor": "^2.2.1",
     "gulp-rename": "^1.2.2",
-    "minimist": "^1.2.0",
-    "tree-directory": "0.0.1",
+    "node-promisify": "^0.2.2",
+    "run-callback": "^2.1.0",
     "util-mix": "^3.0.1",
     "vinyl-fs": "^2.1.1"
   },
   "devDependencies": {
-    "babel-core": "^5.8.25",
-    "del": "^2.0.2",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^5.2.1",
-    "gulp-eslint": "^1.0.0",
-    "gulp-istanbul": "^0.10.1",
-    "gulp-tape": "0.0.5",
-    "gulp-util": "^3.0.6",
-    "isparta": "^3.0.4",
-    "tap-spec": "^4.1.0",
+    "compare-directory": "^1.0.0",
+    "del": "^2.1.0",
+    "eslint": "^1.10.1",
+    "tap-summary": "^1.0.0",
     "tape": "^4.2.0",
     "task-tape": "^1.0.0"
   }

@@ -1,17 +1,21 @@
 {
-  "main": "index.js",
   "scripts": {
     "test": "gulp"
   },
   "devDependencies": {
+    "babel-core": "^6.1.0",
+    "babel-preset-es2015": "^6.0.0",
     "callback-sequence": "^1.2.1",
     "coveralls": "^2.11.4",
     "del": "^2.0.2",
     "gulp": "^3.9.0",
+    "gulp-babel": "^6.0.0",
     "gulp-eslint": "^1.0.0",
     "gulp-istanbul": "^0.10.1",
-    "gulp-tape": "0.0.5",
-    "tap-spec": "^4.1.0",
+    "gulp-json-editor": "^2.2.1",
+    "gulp-tape": "0.0.6",
+    "isparta": "^4.0.0",
+    "tap-summary": "^1.0.0",
     "tape": "^4.2.0",
     "task-tape": "^1.0.0"
   }
