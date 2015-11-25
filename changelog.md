@@ -1,4 +1,16 @@
-<!-- LATEST ba2f655 -->
+<!-- LATEST e18ddfb -->
+
+## [v1.1.0](https://github.com/zoubin/javascript-package-boilerplate/commit/e18ddfb) (2015-11-25)
+
+* [ 2015-11-25 [88fbb48](https://github.com/zoubin/javascript-package-boilerplate/commit/88fbb48) ] babel6 option
+
+* [ 2015-11-25 [28fbff1](https://github.com/zoubin/javascript-package-boilerplate/commit/28fbff1) ] Sugar option
+
+* [ 2015-11-24 [f3e53f6](https://github.com/zoubin/javascript-package-boilerplate/commit/f3e53f6) ] es6-babel6
+
+* [ 2015-11-24 [14ea921](https://github.com/zoubin/javascript-package-boilerplate/commit/14ea921) ] ES5 no longer uses gulp
+
+* [ 2015-11-15 [5900c97](https://github.com/zoubin/javascript-package-boilerplate/commit/5900c97) ] CHANGELOG
 
 ## [v1.0.3](https://github.com/zoubin/javascript-package-boilerplate/commit/ba2f655) (2015-11-15)
 
