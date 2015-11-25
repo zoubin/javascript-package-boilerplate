@@ -12,10 +12,10 @@ var run = promisify(require('run-callback'))
 
 module.exports = function (opts) {
   opts = opts || {}
-  var root = opts.root
+  var root = opts.root || '.'
   var tmplDir = fixtures(opts.template)
   var copyPkg = false
-  return fsStat(path.join(root, 'package.json'))
+  return fsStat(path.resolve(root, 'package.json'))
     .then(function () {
       return run([edit, root, tmplDir])
     }, function () {
