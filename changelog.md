@@ -1,4 +1,10 @@
-<!-- LATEST e18ddfb -->
+<!-- LATEST 0dde014 -->
+
+## [v1.1.1](https://github.com/zoubin/javascript-package-boilerplate/commit/0dde014) (2015-11-25)
+
+* [ 2015-11-25 [460c5b2](https://github.com/zoubin/javascript-package-boilerplate/commit/460c5b2) ] Refine directories
+
+* [ 2015-11-25 [df62f9d](https://github.com/zoubin/javascript-package-boilerplate/commit/df62f9d) ] CHANGELOG
 
 ## [v1.1.0](https://github.com/zoubin/javascript-package-boilerplate/commit/e18ddfb) (2015-11-25)
 
