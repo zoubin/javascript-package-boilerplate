@@ -41,7 +41,7 @@ function edit(root, dir) {
           ))
         } else if (k === 'devDependencies') {
           p[k] = sort(unpick(
-            Object.keys(p.dependencies),
+            Object.keys(p.dependencies || {}),
             tmplPkg[k],
             p[k]
           ))

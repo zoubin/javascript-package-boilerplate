@@ -4,7 +4,7 @@
   },
   "devDependencies": {
     "babel-core": "^5.8.25",
-    "callback-sequence": "^1.2.1",
+    "gulp-sequence": "^0.4.1",
     "coveralls": "^2.11.4",
     "del": "^2.0.2",
     "gulp": "^3.9.0",
@@ -12,7 +12,7 @@
     "gulp-eslint": "^1.0.0",
     "gulp-istanbul": "^0.10.1",
     "gulp-json-editor": "^2.2.1",
-    "gulp-tape": "0.0.6",
+    "gulp-tape": "zoubin/gulp-tape#v0.0.7.beta",
     "isparta": "^3.0.0",
     "tap-summary": "^1.0.0",
     "tape": "^4.2.0",
