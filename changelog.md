@@ -1,4 +1,10 @@
-<!-- LATEST 0dde014 -->
+<!-- LATEST e6d7662 -->
+
+## [v1.1.2](https://github.com/zoubin/javascript-package-boilerplate/commit/e6d7662) (2015-11-25)
+
+* [ 2015-11-25 [c6858ba](https://github.com/zoubin/javascript-package-boilerplate/commit/c6858ba) ] Fix default root
+
+* [ 2015-11-25 [75c9493](https://github.com/zoubin/javascript-package-boilerplate/commit/75c9493) ] CHANGELOG
 
 ## [v1.1.1](https://github.com/zoubin/javascript-package-boilerplate/commit/0dde014) (2015-11-25)
 
