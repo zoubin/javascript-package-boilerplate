@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var populate = require('../lib/populate')
+var populate = require('../')
 var format = require('ansi-escape')
 var Command = require('commander').Command
 var program = new Command('js-pb')

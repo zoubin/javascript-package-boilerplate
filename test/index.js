@@ -22,7 +22,7 @@ test('ES5', function (t) {
         t,
         ['**/*', '!test', '.*'],
         DEST,
-        path.resolve(__dirname, '..', 'lib', 'template', 'es5'),
+        path.resolve(__dirname, '..', 'template', 'es5'),
         function (file) {
           return file.indexOf('.') === 0 ? file.slice(1) : file
         }
@@ -43,7 +43,7 @@ test('ES6', function (t) {
         t,
         ['**/*', '!test', '!lib', '.*'],
         DEST,
-        path.resolve(__dirname, '..', 'lib', 'template', 'es6'),
+        path.resolve(__dirname, '..', 'template', 'es6'),
         function (file) {
           return file.indexOf('.') === 0 ? file.slice(1) : file
         }
@@ -64,7 +64,7 @@ test('Babel6', function (t) {
         t,
         ['**/*', '!test', '!lib', '.*'],
         DEST,
-        path.resolve(__dirname, '..', 'lib', 'template', 'es6-babel6'),
+        path.resolve(__dirname, '..', 'template', 'es6-babel6'),
         function (file) {
           return file.indexOf('.') === 0 ? file.slice(1) : file
         }
