@@ -57,7 +57,7 @@ test('Babel6', function (t) {
       return fsMkdir(DEST)
     })
     .then(function () {
-      return exec(cmd + ' --es6 --babel6 ' + DEST)
+      return exec(cmd + ' --babel6 ' + DEST)
     })
     .then(function () {
       compare(

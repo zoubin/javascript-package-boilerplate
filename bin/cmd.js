@@ -16,9 +16,9 @@ program
 var template = 'es5'
 if (program.es6) {
   template = 'es6'
-  if (program.babel6) {
-    template = 'es6-babel6'
-  }
+}
+if (program.babel6) {
+  template = 'es6-babel6'
 }
 populate({
   root: program.args[0],
