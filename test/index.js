@@ -36,7 +36,7 @@ test('ES6', function (t) {
       return fsMkdir(DEST)
     })
     .then(function () {
-      return exec(cmd + ' -t es6 ' + DEST)
+      return exec(cmd + ' --es6 ' + DEST)
     })
     .then(function () {
       compare(
@@ -44,6 +44,27 @@ test('ES6', function (t) {
         ['**/*', '!test', '!lib', '.*'],
         DEST,
         path.resolve(__dirname, '..', 'lib', 'template', 'es6'),
+        function (file) {
+          return file.indexOf('.') === 0 ? file.slice(1) : file
+        }
+      )
+    })
+})
+
+test('Babel6', function (t) {
+  return del(DEST)
+    .then(function () {
+      return fsMkdir(DEST)
+    })
+    .then(function () {
+      return exec(cmd + ' --es6 --babel6 ' + DEST)
+    })
+    .then(function () {
+      compare(
+        t,
+        ['**/*', '!test', '!lib', '.*'],
+        DEST,
+        path.resolve(__dirname, '..', 'lib', 'template', 'es6-babel6'),
         function (file) {
           return file.indexOf('.') === 0 ? file.slice(1) : file
         }
