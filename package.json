@@ -32,7 +32,7 @@
     "commander": "^2.9.0",
     "gulp-json-editor": "^2.2.1",
     "gulp-rename": "^1.2.2",
-    "node-promisify": "^0.2.2",
+    "node-promisify": "^1.0.0",
     "run-callback": "^2.1.0",
     "util-mix": "^3.0.1",
     "vinyl-fs": "^2.1.1"
