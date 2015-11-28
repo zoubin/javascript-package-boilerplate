@@ -30,20 +30,13 @@ Develope a package written in ES5.
 {
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && task-tape test/*.js | tap-summary",
+    "test": "npm run lint && tap --cov test/*.js",
     "lint": "eslint *.js lib/**/*.js test/*.js bin/*.js",
-    "coverage": "istanbul cover -i 'lib/**/*.js' -i '*.js' --print both task-tape -- test/*.js",
-    "check-coverage": "istanbul check-coverage --statements 90 --functions 90 --branches 85 --lines 90",
-    "upload-coverage": "cat ./coverage/lcov.info | coveralls",
-    "cover": "npm run coverage && npm run check-coverage && npm run upload-coverage"
+    "coveralls": "COVERALLS_REPO_TOKEN=REPO_TOKEN npm test"
   },
   "devDependencies": {
-    "coveralls": "^2.11.4",
     "eslint": "^1.10.1",
-    "istanbul": "^0.4.0",
-    "tap-summary": "^1.0.0",
-    "tape": "^4.2.0",
-    "task-tape": "^1.0.0"
+    "tap": "^2.3.1"
   }
 }
 
@@ -53,7 +46,7 @@ Develope a package written in ES5.
 
 Command: `npm test`
 
-Run tests with [`task-tape`].
+Run tests with [`tap`].
 
 ### Code lint
 
@@ -62,16 +55,7 @@ Command: `npm run lint`
 Apply [`eslint`].
 
 ### Code coverage
-
-Command: `npm run coverage`
-
-Computes code coverage using [`istanbul`].
-
-Command: `npm run check-coverage`
-
-Check if code coverage thresholds satisfied.
-
-Command: `npm run upload-coverage`
+Command: `npm run coveralls`
 
 Upload code coverage data to [coveralls.io](https://coveralls.io/).
 Visit the site for more information.
@@ -152,6 +136,7 @@ gulp.task('scripts', ['clean'], () => {
 * [2 spaces or 4 spaces](https://github.com/zoubin/vim-tabstop)
 
 
+[`tap`]: https://github.com/isaacs/node-tap
 [`tape`]: https://github.com/substack/tape
 [`task-tape`]: https://github.com/zoubin/task-tape
 [`tap-summary`]: https://github.com/zoubin/tap-summary
