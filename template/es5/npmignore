@@ -1,6 +1,6 @@
 npm-debug.log
 changelog.md
-coverage
-example
-test
+coverage/
+example/
+test/
 .*

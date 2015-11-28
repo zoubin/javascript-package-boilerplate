@@ -1,4 +1,4 @@
-var test = require('tape')
+var test = require('tap').test
 var promisify = require('node-promisify')
 var exec = promisify(require('child_process').exec)
 var del = require('del')
