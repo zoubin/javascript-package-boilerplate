@@ -1,6 +1,6 @@
 {
   "name": "js-pb",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "Boilerplate for developing javascript packages",
   "main": "index.js",
   "scripts": {
