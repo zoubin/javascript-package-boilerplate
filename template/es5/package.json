@@ -7,6 +7,6 @@
   },
   "devDependencies": {
     "eslint": "^1.10.1",
-    "tap": "^2.3.1"
+    "tap": "^3.0.0"
   }
 }
