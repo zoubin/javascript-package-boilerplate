@@ -8,7 +8,7 @@ var rename = require('gulp-rename')
 var fixtures = path.resolve.bind(path, __dirname, 'template')
 var promisify = require('node-promisify')
 var fsStat = promisify(fs.stat)
-var run = promisify(require('run-callback'))
+var run = require('run-callback')
 
 module.exports = function (opts) {
   opts = opts || {}
