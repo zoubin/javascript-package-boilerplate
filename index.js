@@ -17,12 +17,12 @@ module.exports = function (opts) {
   var copyPkg = false
   return fsStat(path.resolve(root, 'package.json'))
     .then(function () {
-      return run([edit, root, tmplDir])
+      return run(edit, root, tmplDir)
     }, function () {
       copyPkg = true
     })
     .then(function () {
-      return run([copy, root, tmplDir, opts.overwrite, copyPkg])
+      return run(copy, root, tmplDir, opts.overwrite, copyPkg)
     })
 }
 
