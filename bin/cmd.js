@@ -13,7 +13,7 @@ program
   .option('-f, --force', 'overwrite existing files')
   .parse(process.argv)
 
-var template = 'es5'
+var template = 'stable'
 if (program.es6) {
   template = 'es6'
 }
