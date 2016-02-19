@@ -9,7 +9,7 @@ var fs = require('fs')
 var fsMkdir = promisify(fs.mkdir)
 var compare = require('compare-directory')
 
-test('ES5', function (t) {
+test('stable', function (t) {
   return del(DEST)
     .then(function () {
       return fsMkdir(DEST)
@@ -22,7 +22,7 @@ test('ES5', function (t) {
         t,
         ['**/*', '!test', '.*'],
         DEST,
-        path.resolve(__dirname, '..', 'template', 'es5'),
+        path.resolve(__dirname, '..', 'template', 'stable'),
         function (file) {
           return file.indexOf('.') === 0 ? file.slice(1) : file
         }
